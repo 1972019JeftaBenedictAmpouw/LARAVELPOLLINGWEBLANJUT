@@ -22,8 +22,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/unauthorized', function () {
+    return view('unauthorized');
 });
 
 Route::get('/dashboard', function () {
@@ -34,6 +34,8 @@ Route::get('/course', function () {
     return view('course');
 })->middleware(['auth', 'cekLevel:Program Studi'])->name('course');
 
+
+Route::middleware(['auth', 'cekLevel:Program Studi'])->name('course');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

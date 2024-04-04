@@ -18,6 +18,6 @@ class CekLevel
         if (in_array($request->user()->name, $levels)) {
             return $next($request);
         }
-        return redirect('/home');
+        return redirect('/unauthorized');
     }
 }

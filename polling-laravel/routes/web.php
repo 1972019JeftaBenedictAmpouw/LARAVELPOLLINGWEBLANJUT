@@ -27,8 +27,8 @@ Route::get('/unauthorized', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/course', function () {
     return view('course');

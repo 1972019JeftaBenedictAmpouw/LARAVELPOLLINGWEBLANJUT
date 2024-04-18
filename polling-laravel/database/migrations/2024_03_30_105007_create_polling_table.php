@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('polling', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('sks');
+            $table->string('matakuliah');
+            $table->integer('nrp');
         });
     }
 
